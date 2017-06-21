@@ -89,7 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\src\Prism.Plugin.Popups.Unity\Prism.Plugin.Popups.Unity.csproj">
-      <Project>{A04B12E0-7559-4683-ABB8-B84D15F5352F}</Project>
+      <Project>{3A7F1E98-8ABA-4D9D-A9CD-AE396BE5A634}</Project>
       <Name>Prism.Plugin.Popups.Unity</Name>
     </ProjectReference>
   </ItemGroup>

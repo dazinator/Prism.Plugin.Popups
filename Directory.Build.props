@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project>
+    <PropertyGroup>
+        <Authors>Dan Siegel</Authors>
+        <Owners>Dan Siegel</Owners>
+        <Summary>Provides extensions to the Navigation Service to allow Prism Navigation for Popup Pages</Summary>
+        <Description>Prism $(DIContainer) Plugin for Xamarin Forms to provide Popup Navigation</Description>
+        <PackageReleaseNotes>
+v2.0.0-pre1
+
+- Adds PopupPageNavigationService
+- Marks `PopupGoBackAsync` and `PushPopupAsync` extension methods as obsolete in favor of directly using the `INavigationService.GoBackAsync` &amp; `INavigationService.NavigateAsync` methods
+- Adds Registration extension for all DI Containers with overload so that users can add custom logic to the `PopupPageNavigationService`
+
+v1.1.0
+
+- Adds support for Prism.Forms IDestructible
+- Adds support for new INavigationAware paradigm with `INavigatingAware` and `INavigatedAware`
+- Breaking Change: Removes Non-Async version of ClearPopupStack
+- Ensures OnNavigatingTo will fire on the 'Current Page' of any `NavigationPage`, `MasterDetailPage`, or `TabbedPage`
+- Ensures OnNavigatingFrom will be called when pushing a PopupPage
+
+v1.0.1: 
+- Fixes issue where the appropriate ViewModel was not being loaded 
+- Adds overload to PushPopupAsync to directly add a single navigation parameter 
+v1.0.0: 
+- Initial Prerelease Package
+        </PackageReleaseNotes>
+        <PackageTags>prism;xamarin.forms;popups;prism.forms</PackageTags>
+        <PackageProjectUrl>https://github.com/dansiegel/Prism.Plugin.Popups</PackageProjectUrl>
+        <PackageLicenseUrl>https://github.com/dansiegel/Prism.Plugin.Popups/blob/master/LICENSE</PackageLicenseUrl>
+        <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+        <PackageOutputPath>$(MSBuildThisFileDirectory)/Build</PackageOutputPath>
+        <RepositoryUrl>https://github.com/dansiegel/Prism.Plugin.Popups</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <VersionPrefix>2.0.0</VersionPrefix>
+        <VersionSuffix Condition=" '$(BUILD_BUILDNUMBER)' != '' ">CI-$(BUILD_BUILDNUMBER)</VersionSuffix>
+        <VersionSuffix Condition=" '$(PREVIEW_NUMBER)' != '' ">pre$(PREVIEW_NUMBER)</VersionSuffix>
+        <GenerateDocumentationFile Condition=" '$(Configuration)' == 'Release' ">true</GenerateDocumentationFile>
+        <!-- Workaround until Xamarin supports PPDB -->
+        <DebugType>full</DebugType>
+        <DefaultLanguage>en-US</DefaultLanguage>
+        <PackOnBuild>true</PackOnBuild>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Rg.Plugins.Popup" Version="1.0.4" />
+        <PackageReference Include="MSBuild.Sdk.Extras" Version="1.0.3" PrivateAssets="all" />
+    </ItemGroup>
+
+</Project>
